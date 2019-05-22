@@ -17,9 +17,7 @@ namespace Formularz.Controllers
 
             CommentRepository commentRepository = new CommentRepository();
             var getComment = commentRepository.Get();
-            //var result = query.Get();
-
-            //var getPostEntiti = query.Get(1);
+    
             return View(getComment);
         }
 
@@ -43,10 +41,6 @@ namespace Formularz.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpGet]
-        //public ActionResult GetRegister()
-        //{
-        //    return View();
-        //}
+
     }
 }
