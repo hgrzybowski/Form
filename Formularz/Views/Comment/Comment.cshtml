@@ -1,0 +1,26 @@
+﻿@model Formularz.Models.Comment
+@{
+                /**/
+
+                /**/
+
+                ViewBag.Title = "View";
+}
+
+<h2>Formularz dodania postu do bazy danych</h2>
+
+@using (Html.BeginForm("Create", "Comment", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Author, new { @for = "txtAuthor" })
+        @Html.TextBoxFor(model => model.Author, new { @class = "form-control", @placeholder = "Tu wpisz Tytuł" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @for = "txtDescription" })
+        @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @placeholder = "Tu wpisz Tytuł" })
+    </div>
+
+    <input type="submit" class="btn btn-success" />
+}

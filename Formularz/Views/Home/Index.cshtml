@@ -1,0 +1,77 @@
+﻿@model IList<Formularz.Models.Post>
+@{
+    ViewBag.Title = "Index";
+}
+<table class="table table-striped border">
+    <thead>
+        <tr class="table-info">
+            <th>ID</th>
+            <th>Title</th>
+            <th>Autor</th>
+            <th>Opis</th>
+            <th>Ocena</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Id</th>
+                <th>@item.Title</th>
+                <th>@item.Author</th>
+                <th>@item.Description</th>
+                <th>@item.Rate</th>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<h2>Formularz rejestracji</h2>
+
+<form action="Home/Register" method="post">
+    <div class="form-group">
+        <label for="">Imię</label>
+        <input type="text" class="form-control" id="Name" name="Name" placeholder="Podaj swoje imię" />
+    </div>
+
+    <div class="form-group">
+        <label for="">Nazwisko</label>
+        <input type="text" class="form-control" id="Surname" name="Surname" placeholder="Podaj swoje nazwisko" />
+    </div>
+
+    <div class="form-group">
+        <label for="">Hasło</label>
+        <input type="password" class="form-control" id="Password" name="Password" placeholder="Podaj swoje hasło" />
+    </div>
+
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="Zachowaj format email" />
+    </div>
+
+    <div class="form-group">
+        <label for="">Podaj date:</label>
+        <input type="date" class="form-control" id="Year" name="Year" />
+    </div>
+
+    <div class="form-group">
+        <label for="">Wybierz swój wiek</label>
+        <select class="form-control" id="Age" name="Age">
+            @for (int i = 0; i < 100; i++)
+            {
+                <option>@i</option>
+            }
+            @*<option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>*@
+        </select>
+    </div>
+
+    <div class="form-group form-check">
+        <input type="checkbox" data-val="true" id="Approved" name="Approved" value="true" />
+        <label class="form-check-label">Czy wyrażasz zgodę na przetwarzanie danych</label>
+    </div>
+
+        <input type="submit" class="btn btn-danger" />
+</form>

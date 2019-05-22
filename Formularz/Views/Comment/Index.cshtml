@@ -1,0 +1,32 @@
+﻿@model IList<Formularz.Models.Comment>
+@{
+    /**/
+
+    ViewBag.Title = "View";
+}
+
+<h2>Formularz dodania postu do bazy danych</h2>
+ 
+<table class="table table-striped border">
+    <thead>
+        <tr class="table-info">
+            <th>ID</th>
+          
+            <th>Autor</th>
+            <th>Opis</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th>@item.Id</th>
+            <th>@item.Author</th>
+            <th>@item.Description</th>
+
+        </tr>
+        }
+
+    </tbody>
+</table>
